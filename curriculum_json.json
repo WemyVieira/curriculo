@@ -1,0 +1,340 @@
+{
+  "personalInfo": {
+    "name": "WEMY FELIPE",
+    "title": "Engenheiro de Software",
+    "contact": {
+      "phone": "(85) 98774-1858",
+      "email": "wemyfelype@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/wemy-felipe",
+      "location": "São Paulo, SP, Brasil"
+    }
+  },
+  "summary": {
+    "text": "Engenheiro de Software com **10+ anos de experiência** especializado em desenvolvimento backend escalável. Expert em **Java** com sólida atuação em **Python** e **JavaScript/TypeScript**. Histórico comprovado de entrega de soluções de alto impacto em ambientes corporativos de larga escala, com foco em arquitetura de microsserviços, APIs RESTful e otimização de performance.",
+    "additional": "Praticante de Jiu-Jitsu Brasileiro, aplico princípios de disciplina e melhoria contínua no desenvolvimento de software. Apaixonado por explorar novas tecnologias e resolver problemas complexos através de arquiteturas bem projetadas."
+  },
+  "experiences": [
+    {
+      "id": "exp-001",
+      "position": "Software Engineer",
+      "company": "Claro",
+      "location": "São Paulo, SP",
+      "period": {
+        "start": "2024-05",
+        "end": "present",
+        "display": "Mai/2024 – Presente"
+      },
+      "description": "Desenvolvendo plataforma de streaming para Claro TV com foco em escalabilidade e performance",
+      "achievements": [
+        "Arquitetei e implementei **BFF (Backend for Frontend)** usando Node.js/TypeScript/Express, otimizando a comunicação entre 15+ microserviços e **reduzindo latência em 30%**",
+        "Liderei integração de APIs e microserviços Python/Django, garantindo experiência de streaming fluida para **milhões de usuários**",
+        "Implementei estratégias de cache e otimização que **reduziram tempo de resposta da API em 40%**",
+        "Estabeleci pipeline de testes automatizados aumentando cobertura de código de **45% para 85%**",
+        "Colaborei em arquitetura distribuída aplicando princípios de alta disponibilidade e tolerância a falhas"
+      ],
+      "technologies": [
+        "Node.js",
+        "TypeScript",
+        "Express",
+        "Python",
+        "Django",
+        "Microserviços",
+        "APIs RESTful",
+        "DevOps"
+      ],
+      "highlights": {
+        "impact": "high",
+        "current": true
+      }
+    },
+    {
+      "id": "exp-002",
+      "position": "Arquiteto de Software / Líder Técnico",
+      "company": "Lello Condomínios",
+      "location": "São Paulo, SP",
+      "period": {
+        "start": "2018-11",
+        "end": "2024-05",
+        "display": "Nov/2018 – Mai/2024"
+      },
+      "description": "Liderei transformação tecnológica de sistemas legados para arquitetura moderna de microsserviços",
+      "achievements": [
+        "Comandei squad de Inovação na transformação de sistemas monolíticos em **plataforma white label**, viabilizando expansão comercial para **50+ novos parceiros**",
+        "Defini padrões arquiteturais e tecnológicos que **reduziram time-to-market de novas features em 60%**",
+        "Mentorei equipe de **8 desenvolvedores**, promovendo cultura de código limpo e práticas ágeis",
+        "Implementei arquitetura de microsserviços escalável com JWT, JPA/Hibernate e bancos Oracle/MariaDB",
+        "Modernizei sistemas legados (Java 6, EJB, JSF, PHP) migrando para Java 18 com arquitetura moderna",
+        "Reduzi débito técnico em **70%** através de refatorações estratégicas e documentação técnica",
+        "Atuei como consultor de arquitetura orientando decisões técnicas em projetos estratégicos"
+      ],
+      "technologies": [
+        "Java 18",
+        "Microsserviços",
+        "JWT",
+        "JPA/Hibernate",
+        "Oracle 12",
+        "MariaDB",
+        "Git",
+        "APIs RESTful"
+      ],
+      "highlights": {
+        "impact": "high",
+        "leadership": true
+      }
+    },
+    {
+      "id": "exp-003",
+      "position": "Software Engineer",
+      "company": "Loggi",
+      "location": "São Paulo, SP",
+      "period": {
+        "start": "2021-05",
+        "end": "2022-08",
+        "display": "Mai/2021 – Ago/2022"
+      },
+      "description": "Desenvolvi soluções de alto impacto para otimizar operações logísticas em escala nacional",
+      "achievements": [
+        "Projetei e implementei APIs Python/Django que otimizaram processos críticos de logística, melhorando **eficiência operacional em 25%**",
+        "Otimizei conexões gRPC reduzindo overhead de negociação TLS, resultando em **melhoria de 35% na performance** de serviços distribuídos",
+        "Contribuí para desenvolvimento de **monorepo Python** com automação de compilação de Protocol Buffers, **reduzindo tempo de build em 40%**",
+        "Implementei bibliotecas internas reutilizáveis que aceleraram desenvolvimento de **10+ projetos Django**",
+        "Modelei estruturas de dados complexas e projetei interfaces intuitivas para usuários internos e externos",
+        "Participei ativamente de code reviews e pair programming, elevando qualidade do código da equipe"
+      ],
+      "technologies": [
+        "Python",
+        "Django",
+        "gRPC",
+        "Protocol Buffers",
+        "APIs RESTful",
+        "Monorepo",
+        "Microserviços"
+      ],
+      "highlights": {
+        "impact": "medium"
+      }
+    },
+    {
+      "id": "exp-004",
+      "position": "Desenvolvedor Full Stack",
+      "company": "CCEE - Câmara de Comercialização de Energia Elétrica",
+      "companyNote": "via Ewave do Brasil",
+      "location": "São Paulo, SP",
+      "period": {
+        "start": "2019-09",
+        "end": "2021-05",
+        "display": "Set/2019 – Mai/2021"
+      },
+      "description": "Desenvolvi soluções críticas para setor de energia elétrica com alta demanda de processamento",
+      "achievements": [
+        "**Revolucionei sistema de geração de relatórios:** aumentei capacidade de 50.000 para **300.000 relatórios/dia (aumento de 500%)**",
+        "Implementei arquitetura paralela com escalabilidade vertical e mensageria (Artemis), **eliminando gargalos de processamento**",
+        "Desenvolvi sistema de reprocessamento automático com **zero intervenção manual**, melhorando experiência do usuário",
+        "Entreguei features críticas em ciclo completo (planejamento → desenvolvimento → deploy → monitoramento)",
+        "Apliquei metodologia ágil com senso de dono, contribuindo para melhoria contínua dos processos"
+      ],
+      "technologies": [
+        "Java",
+        "Spring MVC",
+        "Spring Security",
+        "Spring Batch",
+        "Angular",
+        "TypeScript",
+        "Oracle",
+        "MariaDB",
+        "Artemis",
+        "Rancher",
+        "OpenShift",
+        "Bamboo"
+      ],
+      "highlights": {
+        "impact": "high",
+        "achievement": "500% improvement"
+      }
+    },
+    {
+      "id": "exp-005",
+      "position": "Desenvolvedor Full Stack",
+      "company": "Universidade de Fortaleza (UNIFOR/NATI)",
+      "location": "Fortaleza, CE",
+      "period": {
+        "start": "2016-02",
+        "end": "2018-11",
+        "display": "Fev/2016 – Nov/2018"
+      },
+      "description": "Desenvolvi aplicações web e mobile para projetos acadêmicos e corporativos",
+      "achievements": [
+        "Criei aplicações web e mobile end-to-end para projetos internos e externos da universidade",
+        "Projetei modelos de dados robustos e interfaces user-friendly alinhadas às necessidades dos stakeholders",
+        "Colaborei com equipes multidisciplinares aplicando boas práticas de desenvolvimento ágil",
+        "Implementei soluções escaláveis com foco em usabilidade e manutenibilidade"
+      ],
+      "technologies": [
+        "Full Stack Development",
+        "Modelagem de Dados",
+        "Desenvolvimento Mobile",
+        "Web Applications"
+      ],
+      "highlights": {
+        "impact": "low",
+        "note": "Experiência Anterior: Estagiário - Programador Web (Jun/2014 – Fev/2016)"
+      }
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-001",
+      "degree": "Especialização em Inteligência Artificial",
+      "institution": "USP - Universidade de São Paulo",
+      "period": {
+        "start": "2020",
+        "end": "2022",
+        "display": "2020 - 2022"
+      },
+      "field": "Inteligência Artificial"
+    },
+    {
+      "id": "edu-002",
+      "degree": "Bacharelado em Ciência da Computação",
+      "institution": "UNIFOR - Universidade de Fortaleza",
+      "period": {
+        "start": "2012",
+        "end": "2017",
+        "display": "2012 - 2017"
+      },
+      "field": "Ciências Tecnológicas"
+    },
+    {
+      "id": "edu-003",
+      "degree": "Licenciatura Plena em Informática",
+      "institution": "UECE - Universidade Estadual do Ceará",
+      "period": {
+        "start": "2012",
+        "end": "2016",
+        "display": "2012 - 2016"
+      },
+      "field": "Tecnologia da Informação"
+    }
+  ],
+  "skills": {
+    "technical": {
+      "languages": {
+        "expert": [
+          "Java",
+          "Python",
+          "Spring Framework"
+        ],
+        "advanced": [
+          "JavaScript",
+          "TypeScript",
+          "Node.js",
+          "Express",
+          "Django"
+        ],
+        "intermediate": [
+          "Angular",
+          "React"
+        ]
+      },
+      "architecture": [
+        "Microsserviços",
+        "APIs RESTful",
+        "Design Patterns",
+        "SOLID",
+        "Clean Architecture",
+        "Domain-Driven Design (DDD)",
+        "Backend for Frontend (BFF)"
+      ],
+      "databases": [
+        "Oracle",
+        "MariaDB",
+        "MySQL",
+        "PostgreSQL",
+        "JPA/Hibernate"
+      ],
+      "devops": [
+        "Docker",
+        "Kubernetes",
+        "Rancher",
+        "OpenShift",
+        "Git",
+        "CI/CD",
+        "Bamboo"
+      ],
+      "additional": [
+        "gRPC",
+        "Protocol Buffers",
+        "JWT",
+        "OAuth",
+        "WebSockets",
+        "Monorepo",
+        "Mensageria (Artemis, RabbitMQ)"
+      ]
+    },
+    "soft": [
+      {
+        "name": "Liderança Técnica",
+        "description": "Experiência liderando squads e mentorando desenvolvedores júnior e pleno"
+      },
+      {
+        "name": "Comunicação Eficaz",
+        "description": "Habilidade em traduzir requisitos de negócio em soluções técnicas"
+      },
+      {
+        "name": "Resolução de Problemas",
+        "description": "Abordagem analítica para desafios complexos de arquitetura e performance"
+      },
+      {
+        "name": "Trabalho em Equipe",
+        "description": "Colaboração efetiva com times multidisciplinares e stakeholders"
+      },
+      {
+        "name": "Adaptabilidade",
+        "description": "Rápida adaptação a novas tecnologias e mudanças de contexto"
+      },
+      {
+        "name": "Senso de Dono",
+        "description": "Responsabilidade end-to-end por projetos críticos"
+      }
+    ]
+  },
+  "languages": [
+    {
+      "language": "Português",
+      "level": "Nativo",
+      "proficiency": "native"
+    },
+    {
+      "language": "Inglês",
+      "level": "Intermediário",
+      "proficiency": "intermediate",
+      "note": "Leitura técnica avançada"
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert-001",
+      "name": "JavaScript Avançado I: ES6, Orientação a Objetos e Padrões de Projetos",
+      "issuer": null,
+      "date": null
+    },
+    {
+      "id": "cert-002",
+      "name": "Lean Startup: Primeiros Passos da sua Startup Enxuta",
+      "issuer": null,
+      "date": null
+    },
+    {
+      "id": "cert-003",
+      "name": "Expressões Regulares: Capturando Textos de Forma Mágica",
+      "issuer": null,
+      "date": null
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-09-29",
+    "format": "curriculum-vitae",
+    "locale": "pt-BR"
+  }
+}
