@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wemy Felipe - Engenheiro de Software</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header .title {
+            font-size: 1.5em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1em;
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: #764ba2;
+        }
+
+        .about {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .experience-item {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #764ba2;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .job-title {
+            font-size: 1.5em;
+            color: #2d3748;
+            font-weight: bold;
+        }
+
+        .company {
+            font-size: 1.3em;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .period {
+            color: #718096;
+            font-size: 1em;
+            background: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .location {
+            color: #a0aec0;
+            font-style: italic;
+        }
+
+        .job-description {
+            color: #4a5568;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .achievements {
+            margin-top: 15px;
+        }
+
+        .achievement-item {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #2d3748;
+        }
+
+        .achievement-item::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        .achievement-item strong {
+            color: #764ba2;
+        }
+
+        .stack {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .stack-label {
+            font-weight: bold;
+            color: #667eea;
+            margin-right: 10px;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            margin: 5px 5px 5px 0;
+            font-size: 0.9em;
+        }
+
+        .education-item {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .degree {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        .institution {
+            color: #4a5568;
+            font-size: 1.1em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .skill-category h4 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .skill-item {
+            margin: 8px 0;
+            color: #4a5568;
+        }
+
+        .soft-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .soft-skill-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+
+        .soft-skill-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .soft-skill-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .languages {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .language-item {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px 30px;
+            border-radius: 15px;
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .language-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        .language-level {
+            color: #4a5568;
+        }
+
+        .certifications {
+            display: grid;
+            gap: 15px;
+        }
+
+        .cert-item {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+            transition: transform 0.3s;
+        }
+
+        .cert-item:hover {
+            transform: translateX(10px);
+            background: #f8f9fa;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .job-header {
+                flex-direction: column;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+            
+            .experience-item:hover,
+            .soft-skill-item:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>WEMY FELIPE</h1>
+            <div class="title">Engenheiro de Software</div>
+            <div class="contact-info">
+                <div class="contact-item">📞 (85) 98774-1858</div>
+                <div class="contact-item">📧 wemyfelype@gmail.com</div>
+                <div class="contact-item">💼 <a href="https://www.linkedin.com/in/wemy-felipe" style="color: white;">LinkedIn</a></div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="about">
+                    Engenheiro de Software com <strong>10+ anos de experiência</strong> especializado em desenvolvimento backend escalável. Expert em <strong>Java</strong> com sólida atuação em <strong>Python</strong> e <strong>JavaScript/TypeScript</strong>. Histórico comprovado de entrega de soluções de alto impacto em ambientes corporativos de larga escala, com foco em arquitetura de microsserviços, APIs RESTful e otimização de performance.
+                    <br><br>
+                    Praticante de Jiu-Jitsu Brasileiro, aplico princípios de disciplina e melhoria contínua no desenvolvimento de software. Apaixonado por explorar novas tecnologias e resolver problemas complexos através de arquiteturas bem projetadas.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Experiências Profissionais</h2>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Software Engineer</div>
+                            <div class="company">Claro</div>
+                            <div class="location">São Paulo, SP</div>
+                        </div>
+                        <div class="period">Mai/2024 – Presente</div>
+                    </div>
+                    <div class="job-description">
+                        Desenvolvendo plataforma de streaming para Claro TV com foco em escalabilidade e performance
+                    </div>
+                    <div class="achievements">
+                        <div class="achievement-item">Arquitetei e implementei <strong>BFF (Backend for Frontend)</strong> usando Node.js/TypeScript/Express, otimizando a comunicação entre 15+ microserviços e <strong>reduzindo latência em 30%</strong></div>
+                        <div class="achievement-item">Liderei integração de APIs e microserviços Python/Django, garantindo experiência de streaming fluida para <strong>milhões de usuários</strong></div>
+                        <div class="achievement-item">Implementei estratégias de cache e otimização que <strong>reduziram tempo de resposta da API em 40%</strong></div>
+                        <div class="achievement-item">Estabeleci pipeline de testes automatizados aumentando cobertura de código de <strong>45% para 85%</strong></div>
+                    </div>
+                    <div class="stack">
+                        <span class="stack-label">Stack:</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Microserviços</span>
+                        <span class="tech-tag">APIs RESTful</span>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Arquiteto de Software / Líder Técnico</div>
+                            <div class="company">Lello Condomínios</div>
+                            <div class="location">São Paulo, SP</div>
+                        </div>
+                        <div class="period">Nov/2018 – Mai/2024</div>
+                    </div>
+                    <div class="job-description">
+                        Liderei transformação tecnológica de sistemas legados para arquitetura moderna de microsserviços
+                    </div>
+                    <div class="achievements">
+                        <div class="achievement-item">Comandei squad de Inovação na transformação de sistemas monolíticos em <strong>plataforma white label</strong>, viabilizando expansão comercial para <strong>50+ novos parceiros</strong></div>
+                        <div class="achievement-item">Defini padrões arquiteturais e tecnológicos que <strong>reduziram time-to-market de novas features em 60%</strong></div>
+                        <div class="achievement-item">Mentorei equipe de <strong>8 desenvolvedores</strong>, promovendo cultura de código limpo e práticas ágeis</div>
+                        <div class="achievement-item">Modernizei sistemas legados (Java 6, EJB, JSF, PHP) migrando para Java 18 com arquitetura moderna</div>
+                        <div class="achievement-item">Reduzi débito técnico em <strong>70%</strong> através de refatorações estratégicas e documentação técnica</div>
+                    </div>
+                    <div class="stack">
+                        <span class="stack-label">Stack:</span>
+                        <span class="tech-tag">Java 18</span>
+                        <span class="tech-tag">Microsserviços</span>
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">JPA/Hibernate</span>
+                        <span class="tech-tag">Oracle 12</span>
+                        <span class="tech-tag">MariaDB</span>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Software Engineer</div>
+                            <div class="company">Loggi</div>
+                            <div class="location">São Paulo, SP</div>
+                        </div>
+                        <div class="period">Mai/2021 – Ago/2022</div>
+                    </div>
+                    <div class="job-description">
+                        Desenvolvi soluções de alto impacto para otimizar operações logísticas em escala nacional
+                    </div>
+                    <div class="achievements">
+                        <div class="achievement-item">Projetei e implementei APIs Python/Django que otimizaram processos críticos de logística, melhorando <strong>eficiência operacional em 25%</strong></div>
+                        <div class="achievement-item">Otimizei conexões gRPC reduzindo overhead de negociação TLS, resultando em <strong>melhoria de 35% na performance</strong> de serviços distribuídos</div>
+                        <div class="achievement-item">Contribuí para desenvolvimento de <strong>monorepo Python</strong> com automação de compilação de Protocol Buffers, <strong>reduzindo tempo de build em 40%</strong></div>
+                        <div class="achievement-item">Implementei bibliotecas internas reutilizáveis que aceleraram desenvolvimento de <strong>10+ projetos Django</strong></div>
+                    </div>
+                    <div class="stack">
+                        <span class="stack-label">Stack:</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">gRPC</span>
+                        <span class="tech-tag">Protocol Buffers</span>
+                        <span class="tech-tag">APIs RESTful</span>
+                        <span class="tech-tag">Microserviços</span>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Desenvolvedor Full Stack</div>
+                            <div class="company">CCEE - Câmara de Comercialização de Energia Elétrica</div>
+                            <div class="location">São Paulo, SP</div>
+                        </div>
+                        <div class="period">Set/2019 – Mai/2021</div>
+                    </div>
+                    <div class="job-description">
+                        Desenvolvi soluções críticas para setor de energia elétrica com alta demanda de processamento
+                    </div>
+                    <div class="achievements">
+                        <div class="achievement-item"><strong>Revolucionei sistema de geração de relatórios:</strong> aumentei capacidade de 50.000 para <strong>300.000 relatórios/dia (aumento de 500%)</strong></div>
+                        <div class="achievement-item">Implementei arquitetura paralela com escalabilidade vertical e mensageria (Artemis), <strong>eliminando gargalos de processamento</strong></div>
+                        <div class="achievement-item">Desenvolvi sistema de reprocessamento automático com <strong>zero intervenção manual</strong>, melhorando experiência do usuário</div>
+                        <div class="achievement-item">Entreguei features críticas em ciclo completo aplicando metodologia ágil com senso de dono</div>
+                    </div>
+                    <div class="stack">
+                        <span class="stack-label">Stack:</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Spring MVC</span>
+                        <span class="tech-tag">Spring Batch</span>
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Oracle</span>
+                        <span class="tech-tag">Artemis</span>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Desenvolvedor Full Stack</div>
+                            <div class="company">Universidade de Fortaleza (UNIFOR/NATI)</div>
+                            <div class="location">Fortaleza, CE</div>
+                        </div>
+                        <div class="period">Fev/2016 – Nov/2018</div>
+                    </div>
+                    <div class="job-description">
+                        Desenvolvi aplicações web e mobile para projetos acadêmicos e corporativos
+                    </div>
+                    <div class="achievements">
+                        <div class="achievement-item">Criei aplicações web e mobile end-to-end para projetos internos e externos da universidade</div>
+                        <div class="achievement-item">Projetei modelos de dados robustos e interfaces user-friendly alinhadas às necessidades dos stakeholders</div>
+                        <div class="achievement-item">Colaborei com equipes multidisciplinares aplicando boas práticas de desenvolvimento ágil</div>
+                    </div>
+                    <div class="stack">
+                        <span class="tech-tag">Full Stack</span>
+                        <span class="tech-tag">Web Development</span>
+                        <span class="tech-tag">Mobile Development</span>
+                        <span class="tech-tag">Database Design</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Formação Acadêmica</h2>
+                <div class="education-item">
+                    <div class="degree">Especialização em Inteligência Artificial</div>
+                    <div class="institution">USP - Universidade de São Paulo | 2020 - 2022</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Bacharelado em Ciência da Computação</div>
+                    <div class="institution">UNIFOR - Universidade de Fortaleza | 2012 - 2017</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Licenciatura Plena em Informática</div>
+                    <div class="institution">UECE - Universidade Estadual do Ceará | 2012 - 2016</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Competências Técnicas</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Linguagens & Frameworks</h4>
+                        <div class="skill-item"><strong>Expert:</strong> Java, Python, Spring Framework</div>
+                        <div class="skill-item"><strong>Avançado:</strong> JavaScript, TypeScript, Node.js, Django</div>
+                        <div class="skill-item"><strong>Intermediário:</strong> Angular, React</div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Arquitetura & Padrões</h4>
+                        <div class="skill-item">Microsserviços</div>
+                        <div class="skill-item">APIs RESTful</div>
+                        <div class="skill-item">Design Patterns</div>
+                        <div class="skill-item">SOLID</div>
+                        <div class="skill-item">Clean Architecture</div>
+                        <div class="skill-item">DDD</div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Bancos de Dados</h4>
+                        <div class="skill-item">Oracle</div>
+                        <div class="skill-item">MariaDB</div>
+                        <div class="skill-item">MySQL</div>
+                        <div class="skill-item">PostgreSQL</div>
+                        <div class="skill-item">JPA/Hibernate</div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>DevOps & Ferramentas</h4>
+                        <div class="skill-item">Docker</div>
+                        <div class="skill-item">Kubernetes</div>
+                        <div class="skill-item">Rancher, OpenShift</div>
+                        <div class="skill-item">Git, CI/CD</div>
+                        <div class="skill-item">Mensageria</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Habilidades Interpessoais</h2>
+                <div class="soft-skills">
+                    <div class="soft-skill-item">
+                        <div class="soft-skill-title">Liderança Técnica</div>
+                        <div>Experiência liderando squads e mentorando desenvolvedores</div>
+                    </div>
+                    <div class="soft-skill-item">
+                        <div class="soft-skill-title">Comunicação Eficaz</div>
+                        <div>Tradução de requisitos de negócio em soluções técnicas</div>
+                    </div>
+                    <div class="soft-skill-item">
+                        <div class="soft-skill-title">Resolução de Problemas</div>
+                        <div>Abordagem analítica para desafios complexos</div>
+                    </div>
+                    <div class="soft-skill-item">
+                        <div class="soft-skill-title">Trabalho em Equipe</div>
+                        <div>Colaboração efetiva com times multidisciplinares</div>
+                    </div>
+                    <div class="soft-skill-item">
+                        <div class="soft-skill-title">Adaptabilidade</div>
+                        <div>Rápida adaptação a novas tecnologias</div>
+                    </div>
+                    <div class="soft-skill-item">
+                        <div class="soft-skill-title">Senso de Dono</div>
+                        <div>Responsabilidade end-to-end por projetos críticos</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Idiomas</h2>
+                <div class="languages">
+                    <div class="language-item">
+                        <div class="language-name">Português</div>
+                        <div class="language-level">Nativo</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">Inglês</div>
+                        <div class="language-level">Intermediário</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Certificações</h2>
+                <div class="certifications">
+                    <div class="cert-item">JavaScript Avançado I: ES6, Orientação a Objetos e Padrões de Projetos</div>
+                    <div class="cert-item">Lean Startup: Primeiros Passos da sua Startup Enxuta</div>
+                    <div class="cert-item">Expressões Regulares: Capturando Textos de Forma Mágica</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
