@@ -1,622 +1,891 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wemy Felipe - Engenheiro de Software</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currículo - Wemy Felipe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #eef2f7;
+      --paper: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --soft: #f3f6fb;
+      --line: #e5e7eb;
+      --primary: #2563eb;
+      --primary-dark: #1e3a8a;
+      --accent: #7c3aed;
+      --sidebar: #0f172a;
+      --sidebar-text: #e5e7eb;
+      --sidebar-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 40px 20px;
-        line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
     }
 
-    .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        background: white;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.15), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(124, 58, 237, 0.12), transparent 34%),
+        var(--bg);
     }
 
-    .header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 50px;
-        text-align: center;
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      padding: 14px;
+      backdrop-filter: blur(14px);
+      background: rgba(238, 242, 247, 0.86);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.9);
     }
 
-    .header h1 {
-        font-size: 3em;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    .toolbar-inner {
+      width: min(1000px, 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
-    .header .title {
-        font-size: 1.5em;
-        opacity: 0.95;
-        margin-bottom: 20px;
+    .toolbar-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
-    .contact-info {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        flex-wrap: wrap;
-        margin-top: 20px;
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-weight: 800;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 12px 32px rgba(37, 99, 235, 0.28);
+    }
+
+    button.secondary {
+      background: #ffffff;
+      color: var(--primary-dark);
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      box-shadow: none;
+    }
+
+    button.active {
+      background: linear-gradient(135deg, var(--primary-dark), var(--accent));
+      color: #fff;
+      box-shadow: 0 12px 32px rgba(37, 99, 235, 0.32);
+    }
+
+    .page-wrap {
+      padding: 28px 16px 48px;
+    }
+
+    .resume {
+      width: min(1120px, calc(100vw - 32px));
+      min-height: 297mm;
+      aspect-ratio: 210 / 297;
+      height: auto;
+      margin: 0 auto;
+      background: var(--paper);
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.18);
+      display: grid;
+      grid-template-columns: 66mm 1fr;
+      border-radius: 22px;
+    }
+
+    .sidebar {
+      background:
+        linear-gradient(180deg, rgba(37, 99, 235, 0.24), transparent 28%),
+        var(--sidebar);
+      color: var(--sidebar-text);
+      padding: 24px 20px;
+      overflow: hidden;
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.22);
+    }
+
+    .sidebar h2 {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      margin: 20px 0 10px;
+      color: #fff;
+    }
+
+    .contact-item,
+    .sidebar p,
+    .sidebar li {
+      color: var(--sidebar-muted);
+      font-size: 9.6px;
+      line-height: 1.45;
     }
 
     .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 1.1em;
+      margin-bottom: 7px;
+      word-break: break-word;
     }
 
-    .content {
-        padding: 50px;
+    .skill-group {
+      margin-bottom: 11px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+    }
+
+    .skill-group:last-child {
+      border-bottom: 0;
+    }
+
+    .skill-group strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #fff;
+      font-size: 9.8px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tag {
+      font-size: 8.2px;
+      color: #dbeafe;
+      background: rgba(37, 99, 235, 0.18);
+      border: 1px solid rgba(147, 197, 253, 0.16);
+      padding: 3px 6px;
+      border-radius: 999px;
+      line-height: 1.25;
+    }
+
+    .education-item,
+    .certification-item {
+      margin-bottom: 9px;
+    }
+
+    .education-item strong,
+    .certification-item strong {
+      display: block;
+      font-size: 9.6px;
+      color: #fff;
+      line-height: 1.35;
+    }
+
+    .education-item span {
+      display: block;
+      font-size: 8.9px;
+      color: var(--sidebar-muted);
+      line-height: 1.35;
+      margin-top: 2px;
+    }
+
+    .main {
+      padding: 26px 32px 24px;
+      overflow: hidden;
+    }
+
+    .hero {
+      position: relative;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 16px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 76px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 999px;
+    }
+
+    a:link, a:visited {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #94a3b8;
+      transform: scale(1.2);
+      display: inline-block;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 31px;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      color: var(--text);
+    }
+
+    .title {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 15px 0px;
+    }
+
+    .summary {
+      padding: 10px 0px;
+    }
+
+    .summary p {
+      color: #374151;
+      font-size: 10.8px;
+      line-height: 1.52;
+      margin: 0 0 6px;
     }
 
     .section {
-        margin-bottom: 50px;
+      margin-bottom: 16px;
     }
 
     .section-title {
-        font-size: 2em;
-        color: #667eea;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 3px solid #667eea;
-        position: relative;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 10px;
+      font-size: 10.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary-dark);
     }
 
-    .section-title::after {
-        content: '';
-        position: absolute;
-        bottom: -3px;
-        left: 0;
-        width: 100px;
-        height: 3px;
-        background: #764ba2;
+    .section-title::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
     }
 
-    .about {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        padding: 30px;
-        border-radius: 15px;
-        border-left: 5px solid #667eea;
-        font-size: 1.1em;
-        line-height: 1.8;
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
     }
 
-    .experience-item {
-        margin-bottom: 40px;
-        padding: 30px;
-        background: #f8f9fa;
-        border-radius: 15px;
-        border-left: 5px solid #764ba2;
-        transition: transform 0.3s, box-shadow 0.3s;
+    .highlight-card {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 8px 9px;
+      min-height: 54px;
     }
 
-    .experience-item:hover {
-        transform: translateX(10px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    .highlight-card strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: 13.5px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .highlight-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 8.8px;
+      line-height: 1.25;
+    }
+
+    .job {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 12px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .job::before {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: 7px;
+      bottom: -9px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .job:last-child::before {
+      display: none;
+    }
+
+    .job::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
     }
 
     .job-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 15px;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .job-title {
-        font-size: 1.5em;
-        color: #2d3748;
-        font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 5px;
     }
 
     .company {
-        font-size: 1.3em;
-        color: #667eea;
-        font-weight: 600;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.18;
+    }
+
+    .role {
+      font-size: 10.3px;
+      color: var(--primary);
+      font-weight: 800;
+      margin-top: 2px;
     }
 
     .period {
-        color: #718096;
-        font-size: 1em;
-        background: white;
-        padding: 5px 15px;
-        border-radius: 20px;
+      white-space: nowrap;
+      color: var(--muted);
+      font-size: 9.5px;
+      font-weight: 800;
+      padding-top: 2px;
     }
 
-    .location {
-        color: #a0aec0;
-        font-style: italic;
+    .job ul {
+      margin: 5px 0 0;
+      padding-left: 14px;
     }
 
-    .job-description {
-        color: #4a5568;
-        margin: 15px 0;
-        font-style: italic;
+    .job li {
+      color: #374151;
+      font-size: 9.8px;
+      line-height: 1.38;
+      margin-bottom: 3px;
     }
 
-    .achievements {
-        margin-top: 15px;
+    @media (max-width: 900px) {
+      .resume {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        grid-template-columns: 1fr;
+      }
+
+      .main,
+      .sidebar {
+        padding: 26px 22px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .highlights {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    .achievement-item {
-        margin: 10px 0;
-        padding-left: 25px;
-        position: relative;
-        color: #2d3748;
-    }
+    @media (min-width: 1400px) {
+      .page-wrap {
+        padding: 48px 36px 72px;
+      }
 
-    .achievement-item::before {
-        content: '▸';
-        position: absolute;
-        left: 0;
-        color: #667eea;
-        font-size: 1.2em;
-    }
+      .sidebar {
+        padding: 34px 26px;
+      }
 
-    .achievement-item strong {
-        color: #764ba2;
-    }
+      .main {
+        padding: 40px 52px 34px;
+      }
 
-    .stack {
-        margin-top: 15px;
-        padding: 15px;
-        background: white;
-        border-radius: 10px;
-    }
+      .avatar {
+        width: 82px;
+        height: 82px;
+        font-size: 28px;
+      }
 
-    .stack-label {
-        font-weight: bold;
-        color: #667eea;
-        margin-right: 10px;
-    }
+      .sidebar h2 {
+        font-size: 11.5px;
+      }
 
-    .tech-tag {
-        display: inline-block;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 5px 12px;
-        border-radius: 15px;
-        margin: 5px 5px 5px 0;
-        font-size: 0.9em;
-    }
+      h1 {
+        font-size: 46px;
+      }
 
-    .education-item {
-        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-        padding: 20px;
-        border-radius: 15px;
-        margin-bottom: 20px;
-        border-left: 5px solid #ff6b6b;
-    }
+      .title {
+        font-size: 17px;
+      }
 
-    .degree {
-        font-size: 1.3em;
-        font-weight: bold;
-        color: #2d3748;
-    }
+      .summary p {
+        font-size: 13.8px;
+      }
 
-    .institution {
-        color: #4a5568;
-        font-size: 1.1em;
-    }
+      .section-title {
+        font-size: 13.8px;
+      }
 
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
+      .highlight-card strong {
+        font-size: 18px;
+      }
 
-    .skill-category {
-        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-        padding: 20px;
-        border-radius: 15px;
-    }
+      .highlight-card span,
+      .contact-item,
+      .sidebar p,
+      .sidebar li {
+        font-size: 12px;
+      }
 
-    .skill-category h4 {
-        color: #2d3748;
-        margin-bottom: 10px;
-        font-size: 1.2em;
-    }
+      .company {
+        font-size: 17px;
+      }
 
-    .skill-item {
-        margin: 8px 0;
-        color: #4a5568;
-    }
+      .role {
+        font-size: 13px;
+      }
 
-    .soft-skills {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-    }
-
-    .soft-skill-item {
-        background: white;
-        padding: 15px;
-        border-radius: 10px;
-        border-left: 4px solid #667eea;
-        transition: transform 0.3s;
-    }
-
-    .soft-skill-item:hover {
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .soft-skill-title {
-        font-weight: bold;
-        color: #667eea;
-        margin-bottom: 5px;
-    }
-
-    .languages {
-        display: flex;
-        gap: 30px;
-        flex-wrap: wrap;
-    }
-
-    .language-item {
-        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-        padding: 20px 30px;
-        border-radius: 15px;
-        text-align: center;
-        flex: 1;
-        min-width: 150px;
-    }
-
-    .language-name {
-        font-size: 1.3em;
-        font-weight: bold;
-        color: #2d3748;
-    }
-
-    .language-level {
-        color: #4a5568;
-    }
-
-    .certifications {
-        display: grid;
-        gap: 15px;
-    }
-
-    .cert-item {
-        background: white;
-        padding: 15px 20px;
-        border-radius: 10px;
-        border-left: 4px solid #764ba2;
-        transition: transform 0.3s;
-    }
-
-    .cert-item:hover {
-        transform: translateX(10px);
-        background: #f8f9fa;
-    }
-
-    @media (max-width: 768px) {
-        .header h1 {
-            font-size: 2em;
-        }
-        
-        .content {
-            padding: 30px 20px;
-        }
-        
-        .job-header {
-            flex-direction: column;
-        }
-        
-        .skills-grid {
-            grid-template-columns: 1fr;
-        }
+      .job li {
+        font-size: 12px;
+      }
     }
 
     @media print {
-        body {
-            background: white;
-            padding: 0;
-        }
-        
-        .container {
-            box-shadow: none;
-        }
-        
-        .experience-item:hover,
-        .soft-skill-item:hover {
-            transform: none;
-        }
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+
+      html,
+      body {
+        width: 210mm;
+        height: 297mm;
+        background: #fff !important;
+        overflow: hidden !important;
+      }
+
+      .toolbar {
+        display: none !important;
+      }
+
+      .page-wrap {
+        width: 210mm;
+        height: 297mm;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+      }
+
+      .resume {
+        width: 210mm !important;
+        height: 297mm !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        overflow: hidden !important;
+        display: grid !important;
+        grid-template-columns: 66mm 144mm !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .sidebar,
+      .main,
+      .highlight-card,
+      .tag,
+      .avatar {
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+      }
+
+      .sidebar {
+        height: 297mm !important;
+      }
+
+      .main {
+        height: 297mm !important;
+      }
     }
-</style>
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>WEMY FELIPE</h1>
-            <div class="title">Engenheiro de Software</div>
-            <div class="contact-info">
-                <div class="contact-item">📞 (85) 98774-1858</div>
-                <div class="contact-item">📧 wemyfelype@gmail.com</div>
-                <div class="contact-item">💼 <a href="https://www.linkedin.com/in/wemy-felipe" style="color: white;">LinkedIn</a></div>
-            </div>
-        </div>
-
- <div class="content">
-        <div class="section">
-            <h2 class="section-title">Sobre Mim</h2>
-            <div class="about">
-                Engenheiro de Software com <strong>10+ anos de experiência</strong> especializado em desenvolvimento backend escalável. Expert em <strong>Java</strong> com sólida atuação em <strong>Python</strong> e <strong>JavaScript/TypeScript</strong>. Histórico comprovado de entrega de soluções de alto impacto em ambientes corporativos de larga escala, com foco em arquitetura de microsserviços, APIs RESTful e otimização de performance.
-                <br><br>
-                Praticante de Jiu-Jitsu Brasileiro, aplico princípios de disciplina e melhoria contínua no desenvolvimento de software. Apaixonado por explorar novas tecnologias e resolver problemas complexos através de arquiteturas bem projetadas.
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Experiências Profissionais</h2>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <div class="job-title">Software Engineer</div>
-                        <div class="company">Claro</div>
-                        <div class="location">São Paulo, SP</div>
-                    </div>
-                    <div class="period">Mai/2024 – Presente</div>
-                </div>
-                <div class="job-description">
-                    Desenvolvendo plataforma de streaming para Claro TV com foco em escalabilidade e performance
-                </div>
-                <div class="achievements">
-                    <div class="achievement-item">Arquitetei e implementei <strong>BFF (Backend for Frontend)</strong> usando Node.js/TypeScript/Express, otimizando a comunicação entre 15+ microserviços e <strong>reduzindo latência em 30%</strong></div>
-                    <div class="achievement-item">Liderei integração de APIs e microserviços Python/Django, garantindo experiência de streaming fluida para <strong>milhões de usuários</strong></div>
-                    <div class="achievement-item">Implementei estratégias de cache e otimização que <strong>reduziram tempo de resposta da API em 40%</strong></div>
-                    <div class="achievement-item">Estabeleci pipeline de testes automatizados aumentando cobertura de código de <strong>45% para 85%</strong></div>
-                </div>
-                <div class="stack">
-                    <span class="stack-label">Stack:</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">TypeScript</span>
-                    <span class="tech-tag">Express</span>
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Django</span>
-                    <span class="tech-tag">Microserviços</span>
-                    <span class="tech-tag">APIs RESTful</span>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <div class="job-title">Arquiteto de Software / Líder Técnico</div>
-                        <div class="company">Lello Condomínios</div>
-                        <div class="location">São Paulo, SP</div>
-                    </div>
-                    <div class="period">Nov/2018 – Mai/2024</div>
-                </div>
-                <div class="job-description">
-                    Liderei transformação tecnológica de sistemas legados para arquitetura moderna de microsserviços
-                </div>
-                <div class="achievements">
-                    <div class="achievement-item">Comandei squad de Inovação na transformação de sistemas monolíticos em <strong>plataforma white label</strong>, viabilizando expansão comercial para <strong>50+ novos parceiros</strong></div>
-                    <div class="achievement-item">Defini padrões arquiteturais e tecnológicos que <strong>reduziram time-to-market de novas features em 60%</strong></div>
-                    <div class="achievement-item">Mentorei equipe de <strong>8 desenvolvedores</strong>, promovendo cultura de código limpo e práticas ágeis</div>
-                    <div class="achievement-item">Modernizei sistemas legados (Java 6, EJB, JSF, PHP) migrando para Java 18 com arquitetura moderna</div>
-                    <div class="achievement-item">Reduzi débito técnico em <strong>70%</strong> através de refatorações estratégicas e documentação técnica</div>
-                </div>
-                <div class="stack">
-                    <span class="stack-label">Stack:</span>
-                    <span class="tech-tag">Java 18</span>
-                    <span class="tech-tag">Microsserviços</span>
-                    <span class="tech-tag">JWT</span>
-                    <span class="tech-tag">JPA/Hibernate</span>
-                    <span class="tech-tag">Oracle 12</span>
-                    <span class="tech-tag">MariaDB</span>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <div class="job-title">Software Engineer</div>
-                        <div class="company">Loggi</div>
-                        <div class="location">São Paulo, SP</div>
-                    </div>
-                    <div class="period">Mai/2021 – Ago/2022</div>
-                </div>
-                <div class="job-description">
-                    Desenvolvi soluções de alto impacto para otimizar operações logísticas em escala nacional
-                </div>
-                <div class="achievements">
-                    <div class="achievement-item">Projetei e implementei APIs Python/Django que otimizaram processos críticos de logística, melhorando <strong>eficiência operacional em 25%</strong></div>
-                    <div class="achievement-item">Otimizei conexões gRPC reduzindo overhead de negociação TLS, resultando em <strong>melhoria de 35% na performance</strong> de serviços distribuídos</div>
-                    <div class="achievement-item">Contribuí para desenvolvimento de <strong>monorepo Python</strong> com automação de compilação de Protocol Buffers, <strong>reduzindo tempo de build em 40%</strong></div>
-                    <div class="achievement-item">Implementei bibliotecas internas reutilizáveis que aceleraram desenvolvimento de <strong>10+ projetos Django</strong></div>
-                </div>
-                <div class="stack">
-                    <span class="stack-label">Stack:</span>
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Django</span>
-                    <span class="tech-tag">gRPC</span>
-                    <span class="tech-tag">Protocol Buffers</span>
-                    <span class="tech-tag">APIs RESTful</span>
-                    <span class="tech-tag">Microserviços</span>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <div class="job-title">Desenvolvedor Full Stack</div>
-                        <div class="company">CCEE - Câmara de Comercialização de Energia Elétrica</div>
-                        <div class="location">São Paulo, SP</div>
-                    </div>
-                    <div class="period">Set/2019 – Mai/2021</div>
-                </div>
-                <div class="job-description">
-                    Desenvolvi soluções críticas para setor de energia elétrica com alta demanda de processamento
-                </div>
-                <div class="achievements">
-                    <div class="achievement-item"><strong>Revolucionei sistema de geração de relatórios:</strong> aumentei capacidade de 50.000 para <strong>300.000 relatórios/dia (aumento de 500%)</strong></div>
-                    <div class="achievement-item">Implementei arquitetura paralela com escalabilidade vertical e mensageria (Artemis), <strong>eliminando gargalos de processamento</strong></div>
-                    <div class="achievement-item">Desenvolvi sistema de reprocessamento automático com <strong>zero intervenção manual</strong>, melhorando experiência do usuário</div>
-                    <div class="achievement-item">Entreguei features críticas em ciclo completo aplicando metodologia ágil com senso de dono</div>
-                </div>
-                <div class="stack">
-                    <span class="stack-label">Stack:</span>
-                    <span class="tech-tag">Java</span>
-                    <span class="tech-tag">Spring MVC</span>
-                    <span class="tech-tag">Spring Batch</span>
-                    <span class="tech-tag">Angular</span>
-                    <span class="tech-tag">TypeScript</span>
-                    <span class="tech-tag">Oracle</span>
-                    <span class="tech-tag">Artemis</span>
-                </div>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <div>
-                        <div class="job-title">Desenvolvedor Full Stack</div>
-                        <div class="company">Universidade de Fortaleza (UNIFOR/NATI)</div>
-                        <div class="location">Fortaleza, CE</div>
-                    </div>
-                    <div class="period">Fev/2016 – Nov/2018</div>
-                </div>
-                <div class="job-description">
-                    Desenvolvi aplicações web e mobile para projetos acadêmicos e corporativos
-                </div>
-                <div class="achievements">
-                    <div class="achievement-item">Criei aplicações web e mobile end-to-end para projetos internos e externos da universidade</div>
-                    <div class="achievement-item">Projetei modelos de dados robustos e interfaces user-friendly alinhadas às necessidades dos stakeholders</div>
-                    <div class="achievement-item">Colaborei com equipes multidisciplinares aplicando boas práticas de desenvolvimento ágil</div>
-                </div>
-                <div class="stack">
-                    <span class="tech-tag">Full Stack</span>
-                    <span class="tech-tag">Web Development</span>
-                    <span class="tech-tag">Mobile Development</span>
-                    <span class="tech-tag">Database Design</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Formação Acadêmica</h2>
-            <div class="education-item">
-                <div class="degree">Especialização em Inteligência Artificial</div>
-                <div class="institution">USP - Universidade de São Paulo | 2020 - 2022</div>
-            </div>
-            <div class="education-item">
-                <div class="degree">Bacharelado em Ciência da Computação</div>
-                <div class="institution">UNIFOR - Universidade de Fortaleza | 2012 - 2017</div>
-            </div>
-            <div class="education-item">
-                <div class="degree">Licenciatura Plena em Informática</div>
-                <div class="institution">UECE - Universidade Estadual do Ceará | 2012 - 2016</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Competências Técnicas</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Linguagens & Frameworks</h4>
-                    <div class="skill-item"><strong>Expert:</strong> Java, Python, Spring Framework</div>
-                    <div class="skill-item"><strong>Avançado:</strong> JavaScript, TypeScript, Node.js, Django</div>
-                    <div class="skill-item"><strong>Intermediário:</strong> Angular, React</div>
-                </div>
-                <div class="skill-category">
-                    <h4>Arquitetura & Padrões</h4>
-                    <div class="skill-item">Microsserviços</div>
-                    <div class="skill-item">APIs RESTful</div>
-                    <div class="skill-item">Design Patterns</div>
-                    <div class="skill-item">SOLID</div>
-                    <div class="skill-item">Clean Architecture</div>
-                    <div class="skill-item">DDD</div>
-                </div>
-                <div class="skill-category">
-                    <h4>Bancos de Dados</h4>
-                    <div class="skill-item">Oracle</div>
-                    <div class="skill-item">MariaDB</div>
-                    <div class="skill-item">MySQL</div>
-                    <div class="skill-item">PostgreSQL</div>
-                    <div class="skill-item">JPA/Hibernate</div>
-                </div>
-                <div class="skill-category">
-                    <h4>DevOps & Ferramentas</h4>
-                    <div class="skill-item">Docker</div>
-                    <div class="skill-item">Kubernetes</div>
-                    <div class="skill-item">Rancher, OpenShift</div>
-                    <div class="skill-item">Git, CI/CD</div>
-                    <div class="skill-item">Mensageria</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Habilidades Interpessoais</h2>
-            <div class="soft-skills">
-                <div class="soft-skill-item">
-                    <div class="soft-skill-title">Liderança Técnica</div>
-                    <div>Experiência liderando squads e mentorando desenvolvedores</div>
-                </div>
-                <div class="soft-skill-item">
-                    <div class="soft-skill-title">Comunicação Eficaz</div>
-                    <div>Tradução de requisitos de negócio em soluções técnicas</div>
-                </div>
-                <div class="soft-skill-item">
-                    <div class="soft-skill-title">Resolução de Problemas</div>
-                    <div>Abordagem analítica para desafios complexos</div>
-                </div>
-                <div class="soft-skill-item">
-                    <div class="soft-skill-title">Trabalho em Equipe</div>
-                    <div>Colaboração efetiva com times multidisciplinares</div>
-                </div>
-                <div class="soft-skill-item">
-                    <div class="soft-skill-title">Adaptabilidade</div>
-                    <div>Rápida adaptação a novas tecnologias</div>
-                </div>
-                <div class="soft-skill-item">
-                    <div class="soft-skill-title">Senso de Dono</div>
-                    <div>Responsabilidade end-to-end por projetos críticos</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Idiomas</h2>
-            <div class="languages">
-                <div class="language-item">
-                    <div class="language-name">Português</div>
-                    <div class="language-level">Nativo</div>
-                </div>
-                <div class="language-item">
-                    <div class="language-name">Inglês</div>
-                    <div class="language-level">Intermediário</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Certificações</h2>
-            <div class="certifications">
-                <div class="cert-item">JavaScript Avançado I: ES6, Orientação a Objetos e Padrões de Projetos</div>
-                <div class="cert-item">Lean Startup: Primeiros Passos da sua Startup Enxuta</div>
-                <div class="cert-item">Expressões Regulares: Capturando Textos de Forma Mágica</div>
-            </div>
-        </div>
+  <div class="toolbar">
+    <div class="toolbar-inner">
+      <div class="toolbar-group">
+        <button id="btn-pt" class="secondary" type="button" data-lang="pt">PT</button>
+        <button id="btn-en" class="secondary" type="button" data-lang="en">EN</button>
+      </div>
+      <div class="toolbar-group">
+        <button id="btn-print" type="button">Exportar PDF</button>
+      </div>
     </div>
-</div>
+  </div>
+
+  <main class="page-wrap">
+    <article id="resume" class="resume"></article>
+  </main>
+
+  <script>
+    const cvDataPt = {
+      name: "Wemy Felipe",
+      initials: "WF",
+      title: "Senior Software Engineer | Java | Backend | Sistemas Escaláveis",
+      location: "São Paulo, Brasil",
+      email: "wemyfelype@gmail.com",
+      phone: "(85) 987741858",
+      linkedin: "linkedin.com/in/wemy-felipe",
+      summary: [
+        "Engenheiro de Software com mais de 10 anos de experiência, especializado em desenvolvimento backend com Java e Spring Boot.",
+        "Experiência na construção de sistemas escaláveis, APIs de alta performance e arquitetura distribuída, atuando em produtos com milhões de usuários.",
+        "Foco em impacto real no negócio, performance e escalabilidade, com autonomia, senso de dono e participação ativa em decisões técnicas."
+      ],
+      highlights: [
+        { value: "+10 anos", label: "experiência em engenharia" },
+        { value: "30%", label: "redução de latência" },
+        { value: "6x", label: "aumento de capacidade" },
+        { value: "8 devs", label: "liderança técnica" }
+      ],
+      skills: [
+        { group: "Backend", items: ["Java", "Spring Boot", "Node.js", "TypeScript", "Python", "Django"] },
+        { group: "Arquitetura", items: ["Microservices", "System Design", "APIs REST", "Arquitetura Distribuída", "BFF"] },
+        { group: "Dados & Infra", items: ["PostgreSQL", "Oracle", "MariaDB", "Redis", "Cache"] },
+        { group: "Práticas", items: ["SOLID", "Clean Architecture", "Design Patterns", "Testes", "Performance"] }
+      ],
+      experience: [
+        {
+          company: "Claro Brasil",
+          role: "Software Engineer",
+          period: "2024 – Atual",
+          bullets: [
+            "Arquitetura de BFF para plataforma de streaming com milhões de usuários.",
+            "Redução de latência em 30% integrando mais de 15 microserviços.",
+            "Otimização de APIs com redução de tempo de resposta em 40%.",
+            "Evolução da cobertura de testes de 45% para 85%.",
+            "Implementação de arquitetura resiliente e escalável."
+          ]
+        },
+        {
+          company: "Lello Condomínios",
+          role: "Tech Lead / Software Architect",
+          period: "2018 – 2024",
+          bullets: [
+            "Liderança de squad com 8 desenvolvedores, promovendo cultura de código limpo e práticas ágeis.",
+            "Transformação de sistema monolítico em plataforma white-label escalável.",
+            "Redução de time-to-market em 60% com padrões arquiteturais e tecnológicos.",
+            "Migração de sistemas legados para arquitetura moderna com Java.",
+            "Redução de débito técnico em 70% com refatorações estratégicas."
+          ]
+        },
+        {
+          company: "Ewave",
+          role: "Full Stack Developer",
+          period: "2019 – 2021",
+          bullets: [
+            "Desenvolvimento de sistemas críticos para a CCEE.",
+            "Criação de sistema de relatórios escalável, aumentando capacidade de 50k para 300k relatórios/dia.",
+            "Uso de processamento paralelo e mensageria para resiliência e reprocessamento automático.",
+            "Atuação completa desde planejamento até implantação."
+          ]
+        },
+        {
+          company: "Universidade de Fortaleza",
+          role: "Full Stack Developer",
+          period: "2016 – 2018",
+          bullets: [
+            "Desenvolvimento de aplicações web e mobile para projetos internos e externos.",
+            "Atuação em modelagem de dados, backend, frontend e manutenção de sistemas."
+          ]
+        }
+      ],
+      education: [
+        { course: "Especialização em Inteligência Artificial", school: "Universidade de São Paulo — USP" },
+        { course: "Ciência da Computação", school: "Universidade de Fortaleza — UNIFOR" },
+        { course: "Licenciatura em Informática", school: "Universidade Estadual do Ceará — UECE" }
+      ],
+      certifications: [
+        "JavaScript Avançado: ES6, OOP e Design Patterns",
+        "Lean Startup",
+        "Expressões Regulares"
+      ]
+    };
+
+    const cvDataEn = {
+      name: "Wemy Felipe",
+      initials: "WF",
+      title: "Senior Software Engineer | Java | Backend | Scalable Systems",
+      location: "São Paulo, Brazil",
+      email: "wemyfelype@gmail.com",
+      phone: "(85) 987741858",
+      linkedin: "linkedin.com/in/wemy-felipe",
+      summary: [
+        "Software Engineer with more than 10 years of experience, specialized in backend development with Java and Spring Boot.",
+        "Experienced in building scalable systems, high-performance APIs, and distributed architecture for products with millions of users.",
+        "Focused on business impact, performance, and scalability, with autonomy, ownership, and active participation in technical decisions."
+      ],
+      highlights: [
+        { value: "+10 years", label: "engineering experience" },
+        { value: "30%", label: "latency reduction" },
+        { value: "6x", label: "capacity increase" },
+        { value: "8 devs", label: "technical leadership" }
+      ],
+      skills: [
+        { group: "Backend", items: ["Java", "Spring Boot", "Node.js", "TypeScript", "Python", "Django"] },
+        { group: "Architecture", items: ["Microservices", "System Design", "REST APIs", "Distributed Architecture", "BFF"] },
+        { group: "Data & Infra", items: ["PostgreSQL", "Oracle", "MariaDB", "Redis", "Caching"] },
+        { group: "Practices", items: ["SOLID", "Clean Architecture", "Design Patterns", "Testing", "Performance"] }
+      ],
+      experience: [
+        {
+          company: "Claro Brasil",
+          role: "Software Engineer",
+          period: "2024 - Present",
+          bullets: [
+            "Built BFF architecture for a streaming platform with millions of users.",
+            "Reduced latency by 30% while integrating more than 15 microservices.",
+            "Optimized APIs, cutting response time by 40%.",
+            "Improved test coverage from 45% to 85%.",
+            "Implemented a resilient and scalable architecture."
+          ]
+        },
+        {
+          company: "Lello Condomínios",
+          role: "Tech Lead / Software Architect",
+          period: "2018 - 2024",
+          bullets: [
+            "Led an 8-developer squad, fostering clean code culture and agile practices.",
+            "Transformed a monolithic system into a scalable white-label platform.",
+            "Reduced time-to-market by 60% with architectural and technology standards.",
+            "Migrated legacy systems to a modern Java architecture.",
+            "Reduced technical debt by 70% through strategic refactoring."
+          ]
+        },
+        {
+          company: "Ewave",
+          role: "Full Stack Developer",
+          period: "2019 - 2021",
+          bullets: [
+            "Developed critical systems for CCEE.",
+            "Created a scalable reporting system, increasing capacity from 50k to 300k reports/day.",
+            "Used parallel processing and messaging for resilience and automatic reprocessing.",
+            "Worked end-to-end from planning through deployment."
+          ]
+        },
+        {
+          company: "Universidade de Fortaleza",
+          role: "Full Stack Developer",
+          period: "2016 - 2018",
+          bullets: [
+            "Developed web and mobile applications for internal and external projects.",
+            "Worked on data modeling, backend, frontend, and system maintenance."
+          ]
+        }
+      ],
+      education: [
+        { course: "Specialization in Artificial Intelligence", school: "University of São Paulo - USP" },
+        { course: "Computer Science", school: "University of Fortaleza - UNIFOR" },
+        { course: "Teaching Degree in Computer Science", school: "State University of Ceará - UECE" }
+      ],
+      certifications: [
+        "Advanced JavaScript: ES6, OOP and Design Patterns",
+        "Lean Startup",
+        "Regular Expressions"
+      ]
+    };
+
+    const copy = {
+      pt: {
+        title: "Currículo - Wemy Felipe",
+        lang: "pt-BR",
+        sections: {
+          contact: "Contato",
+          stack: "Stack Principal",
+          education: "Formação",
+          certifications: "Certificações",
+          highlights: "Destaques",
+          experience: "Experiência Profissional"
+        },
+        buttons: {
+          print: "Exportar PDF"
+        }
+      },
+      en: {
+        title: "Resume - Wemy Felipe",
+        lang: "en",
+        sections: {
+          contact: "Contact",
+          stack: "Main Stack",
+          education: "Education",
+          certifications: "Certifications",
+          highlights: "Highlights",
+          experience: "Professional Experience"
+        },
+        buttons: {
+          print: "Export PDF"
+        }
+      }
+    };
+
+    function createTags(items) {
+      return items.map(item => `<span class="tag">${item}</span>`).join("");
+    }
+
+    function renderResume(data, lang) {
+      const texts = copy[lang] || copy.pt;
+      const resume = document.getElementById("resume");
+
+      resume.innerHTML = `
+        <aside class="sidebar">
+          <div class="avatar">
+            <img src="perfil.png" alt="Foto de perfil" style="width:100%;height:100%;object-fit:cover;border-radius:20px;" />
+          </div>
+
+          <h2>${texts.sections.contact}</h2>
+          <div class="contact-item">📍 ${data.location}</div>
+          <div class="contact-item">
+            <a href="mailto:${data.email}"  target="_blank"">
+              📧 ${data.email}
+            </a>
+          </div>
+          <div class="contact-item">📱 ${data.phone}</div>
+          <div class="contact-item">
+            <a href="https://${data.linkedin}" target="_blank">
+              🔗 ${data.linkedin}
+            </a>
+          </div>
+
+          <h2>${texts.sections.stack}</h2>
+          ${data.skills.map(skill => `
+            <div class="skill-group">
+              <strong>${skill.group}</strong>
+              <div class="tags">${createTags(skill.items)}</div>
+            </div>
+          `).join("")}
+
+          <h2>${texts.sections.education}</h2>
+          ${data.education.map(item => `
+            <div class="education-item">
+              <strong>${item.course}</strong>
+              <span>${item.school}</span>
+            </div>
+          `).join("")}
+
+          <h2>${texts.sections.certifications}</h2>
+          ${data.certifications.map(item => `
+            <div class="certification-item">
+              <strong>${item}</strong>
+            </div>
+          `).join("")}
+        </aside>
+
+        <section class="main">
+          <header class="hero">
+            <h1>${data.name}</h1>
+            <div class="title">${data.title}</div>
+            <div class="summary">
+              ${data.summary.map(paragraph => `<p>${paragraph}</p>`).join("")}
+            </div>
+          </header>
+
+          <section class="section">
+            <h2 class="section-title">${texts.sections.highlights}</h2>
+            <div class="highlights">
+              ${data.highlights.map(item => `
+                <div class="highlight-card">
+                  <strong>${item.value}</strong>
+                  <span>${item.label}</span>
+                </div>
+              `).join("")}
+            </div>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">${texts.sections.experience}</h2>
+            ${data.experience.map(job => `
+              <div class="job">
+                <div class="job-header">
+                  <div>
+                    <div class="company">${job.company}</div>
+                    <div class="role">${job.role}</div>
+                  </div>
+                  <div class="period">${job.period}</div>
+                </div>
+                <ul>
+                  ${job.bullets.map(bullet => `<li>${bullet}</li>`).join("")}
+                </ul>
+              </div>
+            `).join("")}
+          </section>
+        </section>
+      `;
+    }
+
+    function setLanguage(lang) {
+      const normalized = lang === "en" ? "en" : "pt";
+      const data = normalized === "en" ? cvDataEn : cvDataPt;
+      const texts = copy[normalized];
+
+      document.documentElement.lang = texts.lang;
+      document.title = texts.title;
+      document.getElementById("btn-print").textContent = texts.buttons.print;
+      document.getElementById("btn-pt").classList.toggle("active", normalized === "pt");
+      document.getElementById("btn-en").classList.toggle("active", normalized === "en");
+
+      renderResume(data, normalized);
+      try {
+        localStorage.setItem("resume-language", normalized);
+      } catch (error) {
+        // Ignore storage failures and keep the current session language only.
+      }
+    }
+
+    document.getElementById("btn-print").addEventListener("click", () => window.print());
+    document.querySelectorAll("[data-lang]").forEach(button => {
+      button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    });
+
+    let savedLanguage = null;
+    try {
+      savedLanguage = localStorage.getItem("resume-language");
+    } catch (error) {
+      savedLanguage = null;
+    }
+    setLanguage(savedLanguage === "en" ? "en" : "pt");
+  </script>
 </body>
 </html>
