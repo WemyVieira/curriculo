@@ -567,88 +567,168 @@
   </main>
 
   <script>
-    const cvDataPt = {
-      name: "Wemy Felipe",
-      initials: "WF",
-      title: "Senior Software Engineer | Java | Backend | Sistemas Escaláveis",
-      location: "São Paulo, Brasil",
-      email: "wemyfelype@gmail.com",
-      phone: "(85) 987741858",
-      linkedin: "linkedin.com/in/wemy-felipe",
-      summary: [
-        "Engenheiro de Software com mais de 10 anos de experiência, especializado em desenvolvimento backend com Java e Spring Boot.",
-        "Experiência na construção de sistemas escaláveis, APIs de alta performance e arquitetura distribuída, atuando em produtos com milhões de usuários.",
-        "Foco em impacto real no negócio, performance e escalabilidade, com autonomia, senso de dono e participação ativa em decisões técnicas."
+    cpnst cvDataPt = {
+      "name": "Wemy Felipe",
+      "initials": "WF",
+      "title": "Software Engineer | Java Specialist | Spring Boot | Backend",
+      "location": "São Paulo, Brasil",
+      "email": "wemyfelype@gmail.com",
+      "phone": "(85) 987741858",
+      "linkedin": "linkedin.com/in/wemy-felipe",
+      "summary": [
+        "Engenheiro de Software com sólida trajetória na construção de sistemas distribuídos de alta performance, especializado no ecossistema Java e Spring Boot.",
+        "Experiência prática na arquitetura de APIs escaláveis, microsserviços e padrões de projeto (SOLID, Clean Architecture) para produtos que atendem milhões de usuários.",
+        "Forte capacidade de resolução de problemas complexos, otimização de performance backend e garantia de qualidade de código através de automação de testes."
       ],
-      highlights: [
-        { value: "+10 anos", label: "experiência em engenharia" },
-        { value: "30%", label: "redução de latência" },
-        { value: "6x", label: "aumento de capacidade" },
-        { value: "8 devs", label: "liderança técnica" }
+      "highlights": [
+        { "value": "+10 anos", "label": "experiência em engenharia backend" },
+        { "value": "30%", "label": "redução de latência em microsserviços" },
+        { "value": "85%", "label": "cobertura de testes alcançada" },
+        { "value": "6x", "label": "aumento de capacidade em sistemas críticos" }
       ],
-      skills: [
-        { group: "Backend", items: ["Java", "Spring Boot", "Node.js", "TypeScript", "Python", "Django"] },
-        { group: "Arquitetura", items: ["Microservices", "System Design", "APIs REST", "Arquitetura Distribuída", "BFF"] },
-        { group: "Dados & Infra", items: ["PostgreSQL", "Oracle", "MariaDB", "Redis", "Cache"] },
-        { group: "Práticas", items: ["SOLID", "Clean Architecture", "Design Patterns", "Testes", "Performance"] }
+      "skills": [
+        { "group": "Linguagens & Frameworks", "items": ["Java", "Spring Boot", "Spring Cloud", "Hibernate/JPA", "TypeScript", "Node.js"] },
+        { "group": "Arquitetura & Mensageria", "items": ["Microservices", "RESTful APIs", "BFF (Backend For Frontend)", "Design Patterns", "Clean Architecture"] },
+        { "group": "Dados & Performance", "items": ["PostgreSQL", "Oracle", "Redis", "Cache Strategies", "SQL Tuning"] },
+        { "group": "Práticas & Testes", "items": ["SOLID", "Testes Unitários e Integração (JUnit, Mockito)", "CI/CD", "GitFlow"] }
       ],
-      experience: [
+      "experience": [
         {
-          company: "Claro Brasil",
-          role: "Software Engineer",
-          period: "2024 – Atual",
-          bullets: [
-            "Arquitetura de BFF para plataforma de streaming com milhões de usuários.",
-            "Redução de latência em 30% integrando mais de 15 microserviços.",
-            "Otimização de APIs com redução de tempo de resposta em 40%.",
-            "Evolução da cobertura de testes de 45% para 85%.",
-            "Implementação de arquitetura resiliente e escalável."
+          "company": "Claro Brasil",
+          "role": "Software Engineer",
+          "period": "2024 – Atual",
+          "bullets": [
+            "Desenvolvimento e evolução de arquitetura BFF utilizando Java e Spring Boot para plataforma de streaming com milhões de usuários ativos.",
+            "Integração eficiente de mais de 15 microsserviços, resultando em uma redução de 30% na latência de comunicação entre sistemas.",
+            "Análise e otimização de queries e algoritmos backend, reduzindo o tempo de resposta das APIs principais em 40%.",
+            "Evolução consistente da cobertura de testes automatizados (unitários e integração) de 45% para 85%, mitigando bugs em produção.",
+            "Implementação de padrões de resiliência (Circuit Breaker, Retry) para assegurar alta disponibilidade do ecossistema distribuído."
           ]
         },
         {
-          company: "Lello Condomínios",
-          role: "Tech Lead / Software Architect",
-          period: "2018 – 2024",
-          bullets: [
-            "Liderança de squad com 8 desenvolvedores, promovendo cultura de código limpo e práticas ágeis.",
-            "Transformação de sistema monolítico em plataforma white-label escalável.",
-            "Redução de time-to-market em 60% com padrões arquiteturais e tecnológicos.",
-            "Migração de sistemas legados para arquitetura moderna com Java.",
-            "Redução de débito técnico em 70% com refatorações estratégicas."
+          "company": "Lello Condomínios",
+          "role": "Senior Software Engineer",
+          "period": "2018 – 2024",
+          "bullets": [
+            "Atuação técnica como referência da squad em arquitetura Java, promovendo boas práticas de Clean Code, padrões de projeto e revisões de código rigorosas.",
+            "Desenho técnico e migração de um sistema monolítico legado para uma plataforma white-label moderna e altamente escalável baseada em microsserviços.",
+            "Criação de componentes e bibliotecas compartilhadas, reduzindo o time-to-market de novas funcionalidades em 60%.",
+            "Refatorações estruturais em sistemas de missão crítica, resultando na redução de 70% do débito técnico acumulado."
           ]
         },
         {
-          company: "Ewave",
-          role: "Full Stack Developer",
-          period: "2019 – 2021",
-          bullets: [
-            "Desenvolvimento de sistemas críticos para a CCEE.",
-            "Criação de sistema de relatórios escalável, aumentando capacidade de 50k para 300k relatórios/dia.",
-            "Uso de processamento paralelo e mensageria para resiliência e reprocessamento automático.",
-            "Atuação completa desde planejamento até implantação."
+          "company": "Ewave",
+          "role": "Full Stack Developer",
+          "period": "2019 – 2021",
+          "bullets": [
+            "Desenvolvimento de sistemas backend de missão crítica voltados para o setor de energia (CCEE).",
+            "Arquitetura e desenvolvimento de um sistema de relatórios assíncronos de alta performance, escalando a capacidade de processamento de 50k para 300k relatórios diários.",
+            "Implementação de soluções baseadas em processamento paralelo e mensageria para garantir resiliência e mecanismos de reprocessamento automático de falhas."
           ]
         },
         {
-          company: "Universidade de Fortaleza",
-          role: "Full Stack Developer",
-          period: "2016 – 2018",
-          bullets: [
-            "Desenvolvimento de aplicações web e mobile para projetos internos e externos.",
-            "Atuação em modelagem de dados, backend, frontend e manutenção de sistemas."
+          "company": "Universidade de Fortaleza",
+          "role": "Software Developer",
+          "period": "2016 – 2018",
+          "bullets": [
+            "Desenvolvimento de aplicações web estáveis, com foco em modelagem de dados relacionais e construção de regras de negócio no backend.",
+            "Manutenção corretiva e evolutiva em sistemas internos, garantindo a estabilidade das aplicações em produção."
           ]
         }
       ],
-      education: [
-        { course: "Especialização em Inteligência Artificial", school: "Universidade de São Paulo — USP" },
-        { course: "Ciência da Computação", school: "Universidade de Fortaleza — UNIFOR" },
-        { course: "Licenciatura em Informática", school: "Universidade Estadual do Ceará — UECE" }
+      "education": [
+        { "course": "Especialização em Inteligência Artificial", "school": "Universidade de São Paulo — USP" },
+        { "course": "Ciência da Computação", "school": "Universidade de Fortaleza — UNIFOR" },
+        { "course": "Licenciatura em Informática", "school": "Universidade Estadual do Ceará — UECE" }
       ],
-      certifications: [
-        "JavaScript Avançado: ES6, OOP e Design Patterns",
-        "Lean Startup",
-        "Expressões Regulares"
+      "certifications": [
+        "Arquitetura de Microsserviços e Sistemas Distribuídos",
+        "Desenvolvimento Backend Avançado com Java e Spring Boot"
       ]
     };
+    
+    // const cvDataPt = {
+    //   name: "Wemy Felipe",
+    //   initials: "WF",
+    //   title: "Senior Software Engineer | Java | Backend | Sistemas Escaláveis",
+    //   location: "São Paulo, Brasil",
+    //   email: "wemyfelype@gmail.com",
+    //   phone: "(85) 987741858",
+    //   linkedin: "linkedin.com/in/wemy-felipe",
+    //   summary: [
+    //     "Engenheiro de Software com mais de 10 anos de experiência, especializado em desenvolvimento backend com Java e Spring Boot.",
+    //     "Experiência na construção de sistemas escaláveis, APIs de alta performance e arquitetura distribuída, atuando em produtos com milhões de usuários.",
+    //     "Foco em impacto real no negócio, performance e escalabilidade, com autonomia, senso de dono e participação ativa em decisões técnicas."
+    //   ],
+    //   highlights: [
+    //     { value: "+10 anos", label: "experiência em engenharia" },
+    //     { value: "30%", label: "redução de latência" },
+    //     { value: "6x", label: "aumento de capacidade" },
+    //     { value: "8 devs", label: "liderança técnica" }
+    //   ],
+    //   skills: [
+    //     { group: "Backend", items: ["Java", "Spring Boot", "Node.js", "TypeScript", "Python", "Django"] },
+    //     { group: "Arquitetura", items: ["Microservices", "System Design", "APIs REST", "Arquitetura Distribuída", "BFF"] },
+    //     { group: "Dados & Infra", items: ["PostgreSQL", "Oracle", "MariaDB", "Redis", "Cache"] },
+    //     { group: "Práticas", items: ["SOLID", "Clean Architecture", "Design Patterns", "Testes", "Performance"] }
+    //   ],
+    //   experience: [
+    //     {
+    //       company: "Claro Brasil",
+    //       role: "Software Engineer",
+    //       period: "2024 – Atual",
+    //       bullets: [
+    //         "Arquitetura de BFF para plataforma de streaming com milhões de usuários.",
+    //         "Redução de latência em 30% integrando mais de 15 microserviços.",
+    //         "Otimização de APIs com redução de tempo de resposta em 40%.",
+    //         "Evolução da cobertura de testes de 45% para 85%.",
+    //         "Implementação de arquitetura resiliente e escalável."
+    //       ]
+    //     },
+    //     {
+    //       company: "Lello Condomínios",
+    //       role: "Tech Lead / Software Architect",
+    //       period: "2018 – 2024",
+    //       bullets: [
+    //         "Liderança de squad com 8 desenvolvedores, promovendo cultura de código limpo e práticas ágeis.",
+    //         "Transformação de sistema monolítico em plataforma white-label escalável.",
+    //         "Redução de time-to-market em 60% com padrões arquiteturais e tecnológicos.",
+    //         "Migração de sistemas legados para arquitetura moderna com Java.",
+    //         "Redução de débito técnico em 70% com refatorações estratégicas."
+    //       ]
+    //     },
+    //     {
+    //       company: "Ewave",
+    //       role: "Full Stack Developer",
+    //       period: "2019 – 2021",
+    //       bullets: [
+    //         "Desenvolvimento de sistemas críticos para a CCEE.",
+    //         "Criação de sistema de relatórios escalável, aumentando capacidade de 50k para 300k relatórios/dia.",
+    //         "Uso de processamento paralelo e mensageria para resiliência e reprocessamento automático.",
+    //         "Atuação completa desde planejamento até implantação."
+    //       ]
+    //     },
+    //     {
+    //       company: "Universidade de Fortaleza",
+    //       role: "Full Stack Developer",
+    //       period: "2016 – 2018",
+    //       bullets: [
+    //         "Desenvolvimento de aplicações web e mobile para projetos internos e externos.",
+    //         "Atuação em modelagem de dados, backend, frontend e manutenção de sistemas."
+    //       ]
+    //     }
+    //   ],
+    //   education: [
+    //     { course: "Especialização em Inteligência Artificial", school: "Universidade de São Paulo — USP" },
+    //     { course: "Ciência da Computação", school: "Universidade de Fortaleza — UNIFOR" },
+    //     { course: "Licenciatura em Informática", school: "Universidade Estadual do Ceará — UECE" }
+    //   ],
+    //   certifications: [
+    //     "JavaScript Avançado: ES6, OOP e Design Patterns",
+    //     "Lean Startup",
+    //     "Expressões Regulares"
+    //   ]
+    // };
 
     const cvDataEn = {
       name: "Wemy Felipe",
